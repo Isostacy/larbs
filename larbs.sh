@@ -260,7 +260,7 @@ sudo mkdir /usr/share/xsessions
 
 # Copy dwm.desktop and dwm-session to xsessions
 
-sudo cp /home/$name/.config/dwm\ stuff\ for\ lightdm/* /usr/share/xsessions
+sudo cp /home/$name/.config/dwm-xsession/* /usr/share/xsessions
 
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
