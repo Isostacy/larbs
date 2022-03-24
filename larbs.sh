@@ -252,15 +252,11 @@ echo "export \$(dbus-launch)" > /etc/profile.d/dbus.sh
 	Option "Tapping" "on"
 EndSection' > /etc/X11/xorg.conf.d/40-libinput.conf
 
-# Enable LightDM service
-sudo systemctl enable lightdm.service
+# make wallpaper directory
+sudo mkdir /usr/share/wallpapers
 
-# Create xsessions directory
-sudo mkdir /usr/share/xsessions
-
-# Copy dwm.desktop and dwm-session to xsessions
-
-sudo cp /home/$name/.config/dwm-xsession/* /usr/share/xsessions
+# copy wallpaper to wallpaper
+sudo cp /home/$name/.wallpapers/nord.png /usr/share/wallpapers
 
 # Fix fluidsynth/pulseaudio issue.
 grep -q "OTHER_OPTS='-a pulseaudio -m alsa_seq -r 48000'" /etc/conf.d/fluidsynth ||
